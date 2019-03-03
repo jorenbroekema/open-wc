@@ -195,7 +195,7 @@ export default configs.map(config => ({
 });
 ```
 
-### Copy assts
+### Copy assets
 Web apps often include assets such as css files and images. These are not part of your regular dependency graph, so they need to be copied into the build directory.
 
 https://github.com/shrynx/rollup-plugin-cpy is a plugin that can be used, but there are other options too.
