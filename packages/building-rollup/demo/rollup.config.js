@@ -1,4 +1,4 @@
-import copy from 'rollup-plugin-copier';
+import cpy from 'rollup-plugin-cpy';
 import createDefaultConfig from '../modern-and-legacy-config';
 
 const config = createDefaultConfig({
@@ -10,14 +10,12 @@ export default [
     ...config[0],
     plugins: [
       ...config[0].plugins,
-      copy({
-        items: [
-          {
-            src: 'demo/a/b/foo.txt',
-            dest: 'dist/demo/a/b/foo.txt',
-            createPath: true,
-          },
-        ],
+      cpy({
+        files: ['**/*.txt'],
+        dest: 'dist',
+        options: {
+          parents: true,
+        },
       }),
     ],
   },
