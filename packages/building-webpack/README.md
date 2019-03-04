@@ -5,6 +5,15 @@
 ## Default configuration
 We provide default configuration to help you get started building your web component project with webpack.
 
+## Setup
+
+```bash
+npm init open-wc
+> Upgrade
+> Building
+> Webpack
+```
+
 ## Manual setup
 To set up the default configuration manually:
 

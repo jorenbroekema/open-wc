@@ -7,6 +7,15 @@ We provide a good default configuration to help you get started using rollup wit
 
 Our configuration contains the minimal requirements for getting your app up and running, providing the necessary polyfills for older browsers. For more customization, such as installing custom babel plugins, see the extending section below.
 
+## Setup
+
+```bash
+npm init open-wc
+> Upgrade
+> Building
+> Rollup
+```
+
 ## Manual setup
 
 1. Install the required dependencies:

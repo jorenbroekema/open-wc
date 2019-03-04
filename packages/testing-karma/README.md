@@ -31,10 +31,10 @@ The intention of the presets is to be able to write browser runnable code, with 
 
 ### Setup
 ```bash
-npm i -g yo
-npm i -g generator-open-wc
-
-yo open-wc:testing-karma
+npm init open-wc
+> Upgrade
+> Testing
+> Karma
 ```
 
 ::: tip

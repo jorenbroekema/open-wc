@@ -9,10 +9,10 @@ Using:
 
 ## Setup
 ```bash
-npm i -g yo
-npm i -g generator-open-wc
-
-yo open-wc:testing-wallaby
+npm init open-wc
+> Upgrade
+> Testing
+> Wallaby
 ```
 
 ### Manual
