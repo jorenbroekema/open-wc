@@ -1,8 +1,8 @@
 import cpy from 'rollup-plugin-cpy';
-import createDefaultConfig from '../modern-and-legacy-config';
+import createDefaultConfig from '../../modern-and-legacy-config';
 
 const config = createDefaultConfig({
-  input: './demo/index.html',
+  input: './demo/js/index.html',
 });
 
 export default [

@@ -231,7 +231,65 @@ export default [
   // leave the second config untouched
   config[1],
 ];
+```
 
+### Support typescript
+To import a typescript file, use the `.ts` extension in your `index.html`:
+
+```html
+<html>
+<head></head>
+<body>
+  <my-app></my-app>
+  <script type="module" src="./my-app.ts"></script>
+</body>
+</html>
+```
+
+Make sure your set your `tsconfig.json` to compile to
+
+Within rollup there are two options to add typescript support.
+
+#### 1. Babel
+We recommend using the babel typescript plugin. Add it to your `.babelrc`:
+```json
+{
+  "presets": [
+    "@babel/preset-typescript"
+  ],
+}
+```
+
+This the fastest method, as it strips away types during babel transformormation of your code. It will not perform any type checking though. We recommend setting up the type checking as part of your linting setup, so that you don't need to run the typechecker during development for faster builds.
+
+#### 2. Plugin
+It is also possible to add the rollup typescript plugin, which does typechecking and compiling for you:
+```javascript
+import typescript from 'rollup-plugin-typescript2';
+import createDefaultConfig from '../../modern-and-legacy-config';
+
+const configs = createDefaultConfig({
+  input: './demo/ts/index.html',
+});
+
+export default configs.map(config => ({
+  ...config,
+  plugins: [
+    ...config.plugins,
+    typescript(),
+  ],
+}));
+```
+
+Make sure to prevent any compilation done by the typescript compiler `tsconfig.json`, as babel and rollup do this for you:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "module": "ESNext",
+  }
+}
 ```
 
 #### Import CSS files in lit-html
