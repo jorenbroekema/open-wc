@@ -20,7 +20,6 @@ Now that you have cloned the repository, run the following commands to set up th
 
 ```
 npm install
-npm run bootstrap
 ```
 
 Both commands will install packages like eslint which are necessary to make your changes.
